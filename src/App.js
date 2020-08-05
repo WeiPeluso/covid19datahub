@@ -27,6 +27,11 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: "10px",
     color: "#8897BA",
   },
+  formControl: {
+    marginTop: "40px",
+    marginLeft: "45%",
+    padding: "10px",
+  },
 }));
 
 function App() {
