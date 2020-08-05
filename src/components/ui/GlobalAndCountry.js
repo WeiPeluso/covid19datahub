@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     height: "50px;",
   },
   cases: {
-    backgroundColor: "#DB9D90",
+    backgroundColor: "#699BCB",
     height: "35px;",
     textAlign: "center",
     paddingTop: "15px",
@@ -25,11 +25,11 @@ const useStyles = makeStyles((theme) => ({
   casesNo: {
     textAlign: "center",
     height: "50px;",
-    color: "#DB9D90",
+    color: "#699BCB",
     fontSize: "1rem",
   },
   deaths: {
-    backgroundColor: "#B6C0D3",
+    backgroundColor: "#C67171",
     height: "35px;",
     textAlign: "center",
     paddingTop: "15px",
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   deathsNo: {
     textAlign: "center",
     height: "50px;",
-    color: "#5e7092",
+    color: "#C67171",
     fontSize: "1rem",
   },
   recovered: {
@@ -86,34 +86,58 @@ const GlobalaAndCountry = (props) => {
           <Paper className={classes.casesNo}>
             <span>+{Number(NewConfirmed).toLocaleString("en")}</span>
             <br />
-            <span>{TotalConfirmed}</span>
+            <span>{Number(TotalConfirmed).toLocaleString("en")}</span>
           </Paper>
         </Grid>
         <Grid item xs={3}>
           <Paper className={classes.deathsNo}>
-            <span>+{NewDeaths}</span>
+            <span>+{Number(NewDeaths).toLocaleString("en")}</span>
             <br />
-            <span>{TotalDeaths}</span>
+            <span>{Number(TotalDeaths).toLocaleString("en")}</span>
           </Paper>
         </Grid>
         <Grid item xs={3}>
           <Paper className={classes.recoveredNo}>
-            <span>+{NewRecovered}</span>
+            <span>+{Number(NewRecovered).toLocaleString("en")}</span>
             <br />
-            <span>{TotalRecovered}</span>
+            <span>{Number(TotalRecovered).toLocaleString("en")}</span>
           </Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=4</Paper>
+          <Paper className={classes.paper}>{props.countryData.Country}</Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=2</Paper>
+          <Paper className={classes.casesNo}>
+            <span>
+              +{Number(props.countryData.NewConfirmed).toLocaleString("en")}
+            </span>
+            <br />
+            <span>
+              {Number(props.countryData.TotalConfirmed).toLocaleString("en")}
+            </span>
+          </Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=2</Paper>
+          <Paper className={classes.deathsNo}>
+            <span>
+              +{Number(props.countryData.NewDeaths).toLocaleString("en")}
+            </span>
+            <br />
+            <span>
+              {Number(props.countryData.TotalDeaths).toLocaleString("en")}
+            </span>
+          </Paper>
         </Grid>
         <Grid item xs={3}>
-          <Paper className={classes.paper}>xs=2</Paper>
+          <Paper className={classes.recoveredNo}>
+            <span>
+              +{Number(props.countryData.NewRecovered).toLocaleString("en")}
+            </span>
+            <br />
+            <span>
+              {Number(props.countryData.TotalRecovered).toLocaleString("en")}
+            </span>
+          </Paper>
         </Grid>
       </Grid>
     </div>
